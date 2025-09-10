@@ -1,37 +1,42 @@
 # 🎓 Student Automation System
+## 📌 Proje Açıklaması
+Sistem; öğrencilerin, öğretmenlerin, derslerin, notların ve devamsızlıkların yönetilmesini sağlamaktadır.  
+Rol tabanlı yetkilendirme yapılmıştır:  
 
-Tam fonksiyonel bir **Öğrenci Otomasyon Sistemi**.  
-- **Backend:** .NET 9 Web API + PostgreSQL + Identity + JWT  
-- **Frontend:** Vue 3 + Vite + Pinia + Vue Router + Axios  
-- **Roller:** Admin, Teacher, Student  
-- **Modüller:** Öğrenciler, Öğretmenler, Dersler, Kayıtlar (Enrollment), Notlar, Devamsızlık  
+| Rol      | Yetkiler |
+|----------|----------|
+| **Admin**    | Öğrenci/öğretmen ekleme, ders açma, kayıt yönetimi |
+| **Teacher**  | Kendi derslerine not ve devamsızlık ekleme |
+| **Student**  | Kendi notlarını ve devamsızlıklarını görme |
 
 ---
 
 ## 🚀 Özellikler
 - Kullanıcı kimlik doğrulama (Identity + JWT)
-- Roller bazlı yetkilendirme (Admin, Teacher, Student)
-- Öğrenci / öğretmen / kurs yönetimi
-- Öğrenci not ve devamsızlık kayıtları
+- Roller bazlı yetkilendirme (Admin / Teacher / Student)
+- Öğrenci ve öğretmen yönetimi
+- Ders açma, öğrenci kayıt/çıkarma
+- Not ve devamsızlık yönetimi
 - Swagger UI üzerinden API test imkanı
-- Vue arayüzü ile kullanıcı dostu frontend
+- Vue 3 arayüzü ile kullanıcı dostu frontend
 
 ---
 
-## 🛠️ Teknolojiler
-- **Backend:** .NET 9, ASP.NET Core, EF Core, PostgreSQL, Identity
+## 🛠️ Kullanılan Teknolojiler
+- **Backend:** .NET 9, ASP.NET Core, EF Core, PostgreSQL
 - **Frontend:** Vue 3, Vite, Pinia, Vue Router, Axios
-- **Araçlar:** Swagger, DBeaver/pgAdmin
+- **Kimlik Yönetimi:** Identity + JWT
+- **Veritabanı Yönetimi:** PostgreSQL (pgAdmin / DBeaver)
 
 ---
 
-## 📦 Kurulum
+## ⚙️ Kurulum Adımları
 
-### 1. Backend
-```bash
-cd backend/StudentAutomation.Api
-dotnet tool update --global dotnet-ef
-dotnet restore
-dotnet ef migrations add Initial
-dotnet ef database update
-dotnet run
+### 1. Veritabanı
+- PostgreSQL üzerinde `studentdb` adında veritabanı oluştur.  
+- `backend/StudentAutomation.Api/appsettings.Development.json` dosyasında bağlantı bilgilerini düzenle:  
+  ```json
+  "ConnectionStrings": {
+    "Default": "Host=localhost;Port=5432;Database=studentdb;Username=postgres;Password=34Nz1556"
+  }
+
