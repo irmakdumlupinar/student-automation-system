@@ -37,6 +37,6 @@ Rol tabanlı yetkilendirme yapılmıştır:
 - `backend/StudentAutomation.Api/appsettings.Development.json` dosyasında bağlantı bilgilerini düzenle:  
   ```json
   "ConnectionStrings": {
-    "Default": "Host=localhost;Port=5432;Database=studentdb;Username=postgres;Password=34Nz1556"
+    "Default": "Host=localhost;Port=5432;Database=studentdb;Username=postgres;Password=postgres"
   }
 
